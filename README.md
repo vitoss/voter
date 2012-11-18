@@ -1,6 +1,6 @@
 voter
 =====
-__ "It has been said that democracy is the worst form of government except all the others that have been tried." - Sir Winston Churchill
+_It has been said that democracy is the worst form of government except all the others that have been tried._ - Sir Winston Churchill
 
 Voting is one of core foundations of democracy. Big societies needs big solutions. Small communities can get away with smaller tools. This is example of such application. Team needs to find out if git is better than svn or where to organize next Christmas Party? Post topic. Look for ideas and vote.
 
