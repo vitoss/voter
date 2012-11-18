@@ -1,0 +1,4 @@
+voter
+=====
+
+Voting platform.
