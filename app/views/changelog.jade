@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div#page.container
+    div#content
+      div#header
+        a(href="/")
+          div#logo
+          h1 #{headerTitle}
+        div#navbar
+
+    dl.SimplePageContainer
+      dt 0.2 Release (TODO)
+      dd Introduction of laconic.js library (<a href="http://joestelmach.github.com/laconic/" title="Laconic project website">http://joestelmach.github.com/laconic/</a>).
+      dd Asdf
+      dt 0.1 Release (somewhere in time)
+      dd First public launch during Apriso TEDx.
+
+    div.push
+
+  //- Frameworks
+  script(type="text/javascript",src="/scripts/jquery.min.js")
+  script(type="text/javascript",src="/scripts/jquery-ui.min.js")
+  script(type="text/javascript",src="/scripts/json2.js")
+  script(type="text/javascript",src="/scripts/modernizr.js")
+  script(type="text/javascript",src="/scripts/bootstrap.js")

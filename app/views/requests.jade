@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  div#page.container
+    div#content
+      div#header
+        a(href="/")
+          div#logo
+          h1 #{headerTitle}
+        div#navbar
+
+    p.SimplePageContainer Some say it would be nice to vote about requests. IMHO it's pointless for now - there is just too few of them. In the future is very probable. If you have new request/idea/proposal about system just <a href="mailto:vitotao@gmail.com">send me e-mail</a> or find me in room 8.
+
+    dl
+      dt Incorporate Node 0.8.0
+      dd 
+        a(href='http://nodejs.org/') http://nodejs.org/
+      dt Windows Integrated Security
+      dd Sharepoint may provide some API.
+      dt Create notion of topic
+      dd Topic can has many options: priviledges (only vote for users), expiration date, results visible on end etc. Can be shutdown at will. It's quire big request and new ideas are welcomed (I could think about 'subworld' and 'subrealms' or special kind of tag). Main requirement is ergonomics and useability.
+      dt Private flag
+      dd Private ideas/topics won't be listed on main site.
+      dt Improve tests.
+      dd Websockets are not covered. QUnit tests seems to be broken because of Input Tags jQuery plugin (it cannot be hosted in "memory" dom - elements are taken by id, with regard to document [we don't have document in memory dom - sort of]).
+      dt "New Idea" form is not resposible
+      dd Especially tag field. Please test in many resolutions.
+      dt Mobile is too slow.
+      dd Probably JS is using too much resources. To investigate.
+      dt Add visual feedback when receiving vote update
+      dd Some kind of glow and smooth animation of reordering for example.
+      dt Incorporate back button properly (history in general)
+      dd We want to eliminate all reloads of page. When navigating to tag or searching for one we use window.history.pushState API. We don't intepret Back button. History.js plugin could be helpful and it helps dealing with "legacy" browsers. Note that IE10 has support for it, IE9 and lower don't. Website: <a href="https://github.com/balupton/history.js">https://github.com/balupton/history.js</a>.
+      dt Adding new idea on keyword page we force adding that keyword.
+      dd I suggest that it should be initially listed in tag field and marked as disabled (unremovable). Maybe we should provide our jQuery plugin for tags?
+      dt Emailing single ideas and whole topics
+      dt Favorite button
+      dt Singing in should reload page
+      dt Vote without OpenID account
+      dd Topic author may invite people by mail (link send). Temporary account is created. Maybe token generation can be Name based. Author may input login of users => tokens are generated => author send tokens independly or distribute on any form (facebook for example).
+      dt Confirmation popup for idea delete 
+      dt New added item should be placed in proper order (not at the bottom)
+      dt Idea edition
+      dt Tag autocomplete (tag guessing)
+      dt Rich text editing
+      dd Description field mainly. Especially link interpretation (finds http://, https:// prefixes and adds proper links).
+      dt Back button in Infoshare 
+      dd Embeded in Infoshare version should intepret Back button just like not embeded (without reload back to previous state of application).
+      dt Easy integration with Infoshare embeded parameters
+      dd Maybe topic/realm as URL parameter.
+      dt Ideas presented can be populated from RSS
+      dd RSS file has IDs of ideas (or other form of idea identifaction). Having list in Infoshare, we want to vote on some of list item. Infoshare plugin for list item selection needed too.
+
+
+
+
+    div.push
+
+  //- Frameworks
+  script(type="text/javascript",src="/scripts/jquery.min.js")
+  script(type="text/javascript",src="/scripts/jquery-ui.min.js")
+  script(type="text/javascript",src="/scripts/json2.js")
+  script(type="text/javascript",src="/scripts/modernizr.js")
+  script(type="text/javascript",src="/scripts/bootstrap.js")

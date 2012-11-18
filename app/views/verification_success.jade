@@ -1,0 +1,8 @@
+script(type='text/javascript')
+    window.opener.google.identitytoolkit.updateSavedAccount({email: '#{user.email}', 
+                                                           displayName: '#{user.displayName}',
+                                                           photoUrl: '#{user.photoUrl}'
+                                                         });
+    window.opener.google.identitytoolkit.showSavedAccount('#{user.email}');
+    window.opener.google.identitytoolkit.easyrp.util.notifyWidget("federatedSuccess");
+    window.close();

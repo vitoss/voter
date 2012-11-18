@@ -1,0 +1,8 @@
+Plugins:
+- https://github.com/xoxco/jQuery-Tags-Input 
+
+Start from:
+- Windows integrated authentication
+- Searching after many tags?
+- Vote only mode - no adding new ideas.
+- When removing all ideas there is no message: "No ideas" - like at the beginning when no ideas are present.

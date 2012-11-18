@@ -7,6 +7,10 @@ lib-cov
 *.pid
 *.gz
 
+.DS_Store
+bin
+node_modules
+
 pids
 logs
 results

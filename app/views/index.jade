@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  - if(messages != null)
+    div#messages
+      each msg in messages
+        div(class="alert alert-"+msg.type)
+          a(class="close",data-dismiss="alert",href="#") &times;
+          #{msg.text}
+
+  div#page.container
+    div#content
+      div#header
+        a(href="/")
+          div#logo
+          h1 #{headerTitle}
+        div#navbar
+    div.push
+
+  //- Frameworks
+  script(type="text/javascript",src="/scripts/jquery.min.js")
+  script(type="text/javascript",src="/scripts/jquery-ui.min.js")
+  script(type="text/javascript",src="/scripts/jquery.tagsinput.js")
+  script(type="text/javascript",src="/scripts/jquery.validate.js")
+  script(type="text/javascript",src="/scripts/json2.js")
+  script(type="text/javascript",src="/scripts/modernizr.js")
+  script(type="text/javascript",src="/scripts/bootstrap.js")
+  script(type="text/javascript",src="/scripts/event.bus.js")
+  script(type="text/javascript",src="/scripts/laconic.js")
+  script(type="text/javascript",src="/socket.io/socket.io.js")
+
+  //- Google Api Scripts from CDN
+  script(type="text/javascript",src="http://ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js")
+  script(type="text/javascript",src="http://ajax.googleapis.com/jsapi")
+
+  script(type="text/javascript")
+    google.load("identitytoolkit", "1", {packages: ["ac"], language:"en"});
+
+  //- Custom utilities
+  script(type="text/javascript",src="/scripts/utilities.js")
+  //- Application scripts
+  script(type="text/javascript",src="/scripts/application.js")
+  //- Application Google Identity Toolkit Custom Scripts
+  script(type="text/javascript",src="/scripts/application.git.js")
+  //- Application initialize script
+  script(type="text/javascript",src="/scripts/application.init.js")
+
+  - if( user != null )
+    script(type="text/javascript")
+      $(document).ready(function() {window.google.identitytoolkit.showSavedAccount('#{user.email}')});
+
+  - if( typeof(keyword) != "undefined" && keyword != null )
+    script(type="text/javascript")
+      $.appInit = $.appInit || {};
+      $.appInit.startKeyword = '#{keyword}';

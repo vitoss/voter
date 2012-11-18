@@ -1,0 +1,93 @@
+extends layout
+
+block content
+
+  div#page.container
+    div#content
+      div#header
+        div#logo
+        h1 Idea warehouse
+        div#navbar
+
+    div#newTopic
+      form(class="form-search")
+        input(type="text", class="input-medium search-query span5", placeholder="I would like to discuss about...")
+        button(type="submit", class="btn") Create topic
+
+    div#topicList
+      h3 Recent topics
+      dl
+        dt 
+          a Description lists
+        dd A description list is perfect for defining terms.
+        dt 
+          a Euismod
+        dd Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+        dd Donec id elit non mi porta gravida at eget metus.
+        dt
+          a Malesuada porta
+        dd Etiam porta sem malesuada magna mollis euismod.
+        dt 
+          a Felis euismod semper eget lacinia
+        dd Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+        dt 
+          a Description lists
+        dd A description list is perfect for defining terms.
+        dt 
+          a Euismod
+        dd Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+        dd Donec id elit non mi porta gravida at eget metus.
+        dt
+          a Malesuada porta
+        dd Etiam porta sem malesuada magna mollis euismod.
+        dt 
+          a Felis euismod semper eget lacinia
+        dd Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+
+      h4 You cannot find your favorite theme?
+      p Probably some goblin put it in our archive. ...sogh... Accidentally ...sogh... Records seem to be unrecoverable...
+      But wait! You can use our new thought powered topic search engine!
+
+      div#searchTopic
+        form(class="form-search")
+          input(type="text", class="input-medium search-query span5", placeholder="Your beloved topic description...")
+          button(type="submit", class="btn btn-danger") Find it!
+
+      
+
+  //- Frameworks
+  script(type="text/javascript",src="/scripts/jquery.min.js")
+  script(type="text/javascript",src="/scripts/jquery-ui.min.js")
+  script(type="text/javascript",src="/scripts/jquery.tagsinput.js")
+  script(type="text/javascript",src="/scripts/jquery.validate.js")
+  script(type="text/javascript",src="/scripts/json2.js")
+  script(type="text/javascript",src="/scripts/modernizr.js")
+  script(type="text/javascript",src="/scripts/bootstrap.js")
+  script(type="text/javascript",src="/scripts/event.bus.js")
+  script(type="text/javascript",src="/socket.io/socket.io.js")
+
+  //- Google Api Scripts from CDN
+  script(type="text/javascript",src="http://ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js")
+  script(type="text/javascript",src="http://ajax.googleapis.com/jsapi")
+
+  script(type="text/javascript")
+    google.load("identitytoolkit", "1", {packages: ["ac"], language:"en"});
+
+  script(type="text/javascript",src="/scripts/application.git.js")
+
+  style(type="text/css")
+    #newTopic {
+      margin-top: 55px;
+      clear: both;
+    }
+
+    #newTopic input, #searchTopic input {
+      
+    }
+
+    #newTopic form, #searchTopic form {      
+    }
+
+    #searchTopic {
+      margin-top: 10px;
+    }
