@@ -23,10 +23,10 @@ var app = express.createServer();
 //app.use(express.logger()); //logs all resources and hits to server
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser("*)_JfzywAK,(=:2]z23[nO9G&:pDEqJGOzb|k-#!1zCVr!;^doKu@j^tm[6!D]L}"));
+app.use(express.cookieParser("{please provide your own cookie random string}"));
 app.use(express.session({
   store: sessionStore,
-  secret: "*)_JfzywAK,(=:2]z23[nO9G&:pDEqJGOzb|k-#!1zCVr!;^doKu@j^tm[6!D]K}",
+  secret: "{please provide your own secret string}",
   key: 'express.sid'
 }));
 app.use(flash());
@@ -136,7 +136,7 @@ app.get('/verify', function(req, res) {
   var post_options = {
     host: 'www.googleapis.com',
     port: '443',
-    path: '/identitytoolkit/v1/relyingparty/verifyAssertion?key=AIzaSyCdQ1ogPMAZ8RHFWOUyutrYcuH_x7g4EPM',
+    path: '/identitytoolkit/v1/relyingparty/verifyAssertion?key={please provide your own key}',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
